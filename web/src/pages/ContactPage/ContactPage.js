@@ -40,7 +40,7 @@ const ContactPage = () => {
         onSubmit={onSubmit}
         validation={{ mode: 'onBlur' }}
         error={error}
-        formMthods={formMethods}
+        formMethods={formMethods}
       >
         <FormError
           error={error}
