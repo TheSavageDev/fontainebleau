@@ -1,14 +1,20 @@
 import { Link, routes } from '@redwoodjs/router'
 
-const BoardPost = ({ post }) => {
+const truncate = (text, length) => {
+  return text.substring(0, length) + '...'
+}
+
+const BoardPost = ({ post, summary = false }) => {
   return (
-    <article>
+    <article className="mt-10">
       <header>
-        <h2>
+        <h2 className="text-xl text-blue-700 font-semibold">
           <Link to={routes.boardPost({ id: post.id })}>{post.title}</Link>
         </h2>
       </header>
-      <div>{post.body}</div>
+      <div className="mt-2 text-grey-900 font-light">
+        {summary ? truncate(post.body, 100) : post.body}
+      </div>
     </article>
   )
 }

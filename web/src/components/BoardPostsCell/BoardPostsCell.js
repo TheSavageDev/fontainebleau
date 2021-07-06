@@ -20,5 +20,11 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ posts }) => {
-  return posts.map((post) => <BoardPost key={post.id} post={post} />)
+  return (
+    <div className="space-y-10">
+      {posts.map((post) => (
+        <BoardPost key={post.id} post={post} summary={true} />
+      ))}
+    </div>
+  )
 }
